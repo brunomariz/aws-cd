@@ -1,4 +1,8 @@
+[![Update EC2 Repo](https://github.com/brunomariz/aws-cd/actions/workflows/ec2_pull.yml/badge.svg)](https://github.com/brunomariz/aws-cd/actions/workflows/ec2_pull.yml)
+
 # aws-cd
+
+Steps to automate deployment on EC2 instance by pulling changes automatically on push
 
 - Create EC2 instance with .pem key
 - Add pem to repo (Settings > Security > Secrets and Variables > Actions > New Repository Secret) and name it EC2_SECRET
