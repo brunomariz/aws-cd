@@ -20,7 +20,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${SSH_USER}@${SSH_HOST} '
 
               # Now we have got the access of EC2 and we will start the deploy .
-              cd /home/$SSH_USER/aws-cd &&
+              cd /home/$USER/aws-cd &&
               git checkout main &&
               git fetch --all &&
               git reset --hard origin/main &&
