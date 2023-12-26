@@ -11,19 +11,19 @@ jobs:
       - uses: actions/checkout@v2 
       - name: Build & Deploy
         env:
-            PRIVATE_KEY: ${{ secrets.EC2_SECRET }}
-            HOSTNAME: ${{secrets.SSH_HOST}}
-            USER_NAME: ${{secrets.SSH_USER}}
+            EC2_SECRET: ${{ secrets.EC2_SECRET }}
+            SSH_HOST: ${{secrets.SSH_HOST}}
+            SSH_USER: ${{secrets.SSH_USER}}
       
         run: |
           echo "$EC2_SECRET" > private_key && chmod 600 private_key
-          # ssh -o StrictHostKeyChecking=no -i private_key ${SSH_USER}@${SSH_HOST} '
+          ssh -o StrictHostKeyChecking=no -i private_key ${SSH_USER}@${SSH_HOST} '
 
-          #     # Now we have got the access of EC2 and we will start the deploy .
-          #     cd /home/$SSH_USER/aws-cd &&
-          #     git checkout main &&
-          #     git fetch --all &&
-          #     git reset --hard origin/main &&
-          #     git pull origin main &&
-          #     echo "updated at: $(echo $(date))" >> /home/SSH_USER/log
-          #     '
+              # Now we have got the access of EC2 and we will start the deploy .
+              cd /home/$SSH_USER/aws-cd &&
+              git checkout main &&
+              git fetch --all &&
+              git reset --hard origin/main &&
+              git pull origin main &&
+              echo "updated at: $(echo $(date))" >> /home/SSH_USER/log
+              '
