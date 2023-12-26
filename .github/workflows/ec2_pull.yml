@@ -25,5 +25,5 @@ jobs:
               git fetch --all &&
               git reset --hard origin/main &&
               git pull origin main &&
-              echo "updated at: $(echo $(date))" >> /home/SSH_USER/log
+              echo "updated at: $(echo $(date))" >> /home/$USER/log
               '
